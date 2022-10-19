@@ -12,7 +12,9 @@ export default defineConfig({
   resolve: {
     alias: {
       "@components": resolve(__dirname, "src/components"),
+      "@img": resolve(__dirname, "src/img"),
       "@services": resolve(__dirname, "src/services"),
+      "@styles": resolve(__dirname, "src/styles"),
     },
   },
 });

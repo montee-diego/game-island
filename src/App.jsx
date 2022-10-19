@@ -12,6 +12,8 @@ import Nav from "./components/Nav";
 import PageNotFound from "./pages/PageNotFound";
 import Search from "./pages/Search";
 
+import { Header } from "@components";
+
 function App() {
   const { pathname } = useLocation();
 
@@ -22,7 +24,8 @@ function App() {
   return (
     <div className='App'>
       <GlobalStyle />
-      <Nav />
+      <Header />
+      {/* <Nav /> */}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/error' element={<PageNotFound />} />

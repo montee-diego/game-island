@@ -8,8 +8,11 @@ import BrowseMenu from "./BrowseMenu";
 import GamesMenu from "./GamesMenu";
 import SearchIcon from "../img/icon-search.svg";
 
+import { Navbar as Sidebar } from "@components";
+
 const Nav = () => {
   const [searchInput, setSearchInput] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
@@ -29,13 +32,19 @@ const Nav = () => {
   };
 
   return (
-    <nav>
+    <nav onMouseLeave={() => setIsMenuOpen(false)}>
       <NavWrapper>
         <NavBar>
           <div className='top-bar'>
             <Link to='/' id='logo'>
               Game Island
             </Link>
+
+            <button
+              onMouseEnter={() => setIsMenuOpen(true)}
+              onMouseDown={() => setIsMenuOpen(!isMenuOpen)}>
+              Browse
+            </button>
 
             <form className='search' onSubmit={handleSubmit}>
               <input
@@ -50,13 +59,13 @@ const Nav = () => {
               </button>
             </form>
           </div>
-          <Explore>
+
+          {isMenuOpen && <Sidebar />}
+
+          {/* <Explore>
             <li>
               <Link to={"/"}>HOME</Link>
-              <Line
-                initial={{ opacity: 0 }}
-                animate={{ opacity: pathname === "/" ? 1 : 0 }}
-              />
+              <Line initial={{ opacity: 0 }} animate={{ opacity: pathname === "/" ? 1 : 0 }} />
             </li>
             <li>
               <Link to={"/games/discover/main"}>GAMES</Link>
@@ -76,11 +85,11 @@ const Nav = () => {
                 }}
               />
             </li>
-          </Explore>
+          </Explore> */}
         </NavBar>
       </NavWrapper>
-      {pathname.startsWith("/browse") && <BrowseMenu path={pathname} />}
-      {pathname.startsWith("/games") && <GamesMenu path={pathname} />}
+      {/* {pathname.startsWith("/browse") && <BrowseMenu path={pathname} />}
+      {pathname.startsWith("/games") && <GamesMenu path={pathname} />} */}
     </nav>
   );
 };
