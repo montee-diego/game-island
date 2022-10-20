@@ -79,12 +79,14 @@ const GlobalStyle = createGlobalStyle`
   input {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
+    /* font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
     background-color: #3f4a5e;
     color: #c1c6cf;
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 0.5rem 0rem 0rem 0.5rem;
     outline: none;
-    padding: 0.6rem;
+    padding: 0.6rem; */
   }
 
   button {

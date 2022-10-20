@@ -4,7 +4,7 @@ import { default as styled } from "styled-components";
 export const Container = styled.nav`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 2rem;
+  column-gap: 2rem;
   margin: 0rem auto;
   width: 90%;
 `;

@@ -11,12 +11,12 @@ const SearchBar = () => {
   };
 
   const handleSubmit = e => {
-    e.target.preventDefault();
+    e.preventDefault();
   };
 
   return (
     <Styled.Form onSubmit={handleSubmit}>
-      <Styled.Input type='text' value={input} onChange={handleInput} />
+      <Styled.Input type='text' size={10} value={input} onChange={handleInput} />
       <Styled.SubmitBtn type='submit'>
         <img src={SearchIcon} alt='search' />
       </Styled.SubmitBtn>
