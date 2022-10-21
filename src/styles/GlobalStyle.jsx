@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   * {
     padding: 0;
     margin: 0;
@@ -35,9 +35,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   section {
-    width: 90%;
+    /* width: 90%;
     margin: 0rem auto;
-    flex-grow: 1;
+    flex-grow: 1; */
   }
 
   h1 {
@@ -79,12 +79,14 @@ const GlobalStyle = createGlobalStyle`
   input {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
+    /* font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
     background-color: #3f4a5e;
     color: #c1c6cf;
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 0.5rem 0rem 0rem 0.5rem;
     outline: none;
-    padding: 0.6rem;
+    padding: 0.6rem; */
   }
 
   button {
@@ -101,5 +103,3 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
   }
 `;
-
-export default GlobalStyle;

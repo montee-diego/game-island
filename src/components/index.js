@@ -1,5 +1,5 @@
-export { default as Header } from "./layout/Header/Header";
-export { default as Navbar } from "./layout/Navbar/Navbar";
+export { default as Header } from "@components/layout/Header/Header";
+export { default as Navbar } from "@components/layout/Navbar/Navbar";
 
-export { default as Logo } from "./shared/Logo/Logo";
-export { default as SearchBar } from "./shared/SearchBar/SearchBar";
+export { default as Logo } from "@components/shared/Logo/Logo";
+export { default as SearchBar } from "@components/shared/SearchBar/SearchBar";
