@@ -6,4 +6,5 @@ export const Link = styled(NavLink)`
   font-size: 2.1rem;
   line-height: 2.1rem;
   transform: translateY(-3px);
+  white-space: nowrap;
 `;
