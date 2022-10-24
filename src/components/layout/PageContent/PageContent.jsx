@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import { Browse, Discover, GameDetails, Games, Home, PageNotFound, Search } from "@pages";
-import * as Styled from "./Pages.styled";
+import * as Styled from "./PageContent.styled";
 
-const Pages = () => {
+const PageContent = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -27,4 +27,4 @@ const Pages = () => {
   );
 };
 
-export default Pages;
+export default PageContent;
