@@ -1,4 +1,4 @@
-import HomeList from "../components/HomeList";
+import HomeList from "@components/HomeList";
 
 const Home = () => {
   return (

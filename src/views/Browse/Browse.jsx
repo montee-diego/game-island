@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useGetCategoryQuery } from "../services/api";
 
-import Loading from "../components/Loading";
-import ErrorMessage from "../components/ErrorMessage";
-import CategoryList from "../components/CategoryList";
-import LoadButton from "../components/LoadButton";
-import Line from "../components/Line";
+import { useGetCategoryQuery } from "@services/api";
+import Loading from "@components/Loading";
+import ErrorMessage from "@components/ErrorMessage";
+import CategoryList from "@components/CategoryList";
+import LoadButton from "@components/LoadButton";
+import Line from "@components/Line";
 
 import * as Styled from "./Browse.styled";
 

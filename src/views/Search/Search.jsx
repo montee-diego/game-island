@@ -1,28 +1,24 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { useGetCategoryGamesQuery } from "../services/api";
+import { useSearchParams } from "react-router-dom";
 
-import DynamicTitle from "../components/DynamicTitle";
-import ErrorMessage from "../components/ErrorMessage";
-import GameList from "../components/GameList";
-import Line from "../components/Line";
-import Loading from "../components/Loading";
-import LoadButton from "../components/LoadButton";
+import { useGetSearchQuery } from "@services/api";
+import Line from "@components/Line";
+import Loading from "@components/Loading";
+import ErrorMessage from "@components/ErrorMessage";
+import LoadButton from "@components/LoadButton";
+import GameList from "@components/GameList";
 
-const Games = () => {
+const Search = () => {
   const [page, setPage] = useState(1);
   const [results, setResults] = useState([]);
   const [isComplete, setIsComplete] = useState(false);
-  const [param, setParam] = useState("");
+  const [query, setQuery] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const { type, id } = useParams();
+  const searchQuery = searchParams.get("query");
 
-  const { data, isFetching, isError, refetch } = useGetCategoryGamesQuery(
-    {
-      filter: type,
-      id: id,
-      params: { page: page, page_size: 20 },
-    },
+  const { data, isFetching, isError, refetch } = useGetSearchQuery(
+    { search: searchQuery, page: page, page_size: 20 },
     { skip: isComplete }
   );
 
@@ -34,22 +30,22 @@ const Games = () => {
   };
 
   useEffect(() => {
-    if (id !== param) {
+    if (query !== searchQuery) {
       setIsComplete(false);
       setPage(1);
       setResults([]);
-      setParam(id);
+      setQuery(searchQuery);
     }
 
     if (data && !isComplete) {
       setIsComplete(true);
       setResults(results.concat(data?.results));
     }
-  }, [id, data]);
+  }, [searchParams, data]);
 
   return (
     <section>
-      <DynamicTitle type={type} id={id} />
+      <h1>Search Results for "{searchQuery}"</h1>
       <Line />
 
       {results.length > 0 && <GameList games={results} />}
@@ -65,4 +61,4 @@ const Games = () => {
   );
 };
 
-export default Games;
+export default Search;

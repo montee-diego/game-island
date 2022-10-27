@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams, Navigate } from "react-router";
-import { useGetListsQuery } from "../services/api";
 
-import ErrorMessage from "../components/ErrorMessage";
-import GameList from "../components/GameList";
-import Line from "../components/Line";
-import Loading from "../components/Loading";
-import LoadButton from "../components/LoadButton";
+import { useGetListsQuery } from "@services/api";
+import ErrorMessage from "@components/ErrorMessage";
+import GameList from "@components/GameList";
+import Line from "@components/Line";
+import Loading from "@components/Loading";
+import LoadButton from "@components/LoadButton";
 
 const Discover = () => {
   const [page, setPage] = useState(1);

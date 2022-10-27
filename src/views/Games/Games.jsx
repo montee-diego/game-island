@@ -1,24 +1,28 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import { useGetSearchQuery } from "../services/api";
+import { useParams } from "react-router-dom";
 
-import Line from "../components/Line";
-import Loading from "../components/Loading";
-import ErrorMessage from "../components/ErrorMessage";
-import LoadButton from "../components/LoadButton";
-import GameList from "../components/GameList";
+import { useGetCategoryGamesQuery } from "@services/api";
+import DynamicTitle from "@components/DynamicTitle";
+import ErrorMessage from "@components/ErrorMessage";
+import GameList from "@components/GameList";
+import Line from "@components/Line";
+import Loading from "@components/Loading";
+import LoadButton from "@components/LoadButton";
 
-const Search = () => {
+const Games = () => {
   const [page, setPage] = useState(1);
   const [results, setResults] = useState([]);
   const [isComplete, setIsComplete] = useState(false);
-  const [query, setQuery] = useState("");
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [param, setParam] = useState("");
 
-  const searchQuery = searchParams.get("query");
+  const { type, id } = useParams();
 
-  const { data, isFetching, isError, refetch } = useGetSearchQuery(
-    { search: searchQuery, page: page, page_size: 20 },
+  const { data, isFetching, isError, refetch } = useGetCategoryGamesQuery(
+    {
+      filter: type,
+      id: id,
+      params: { page: page, page_size: 20 },
+    },
     { skip: isComplete }
   );
 
@@ -30,22 +34,22 @@ const Search = () => {
   };
 
   useEffect(() => {
-    if (query !== searchQuery) {
+    if (id !== param) {
       setIsComplete(false);
       setPage(1);
       setResults([]);
-      setQuery(searchQuery);
+      setParam(id);
     }
 
     if (data && !isComplete) {
       setIsComplete(true);
       setResults(results.concat(data?.results));
     }
-  }, [searchParams, data]);
+  }, [id, data]);
 
   return (
     <section>
-      <h1>Search Results for "{searchQuery}"</h1>
+      <DynamicTitle type={type} id={id} />
       <Line />
 
       {results.length > 0 && <GameList games={results} />}
@@ -61,4 +65,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default Games;
