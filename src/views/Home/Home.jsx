@@ -1,6 +1,6 @@
 import HomeList from "@components/HomeList";
 
-const Home = () => {
+export const Home = () => {
   return (
     <section>
       <HomeList type='main' order='-relevance' id='latest' />
@@ -10,5 +10,3 @@ const Home = () => {
     </section>
   );
 };
-
-export default Home;

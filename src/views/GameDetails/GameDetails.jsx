@@ -14,7 +14,7 @@ import GameList from "@components/GameList";
 
 import * as Styled from "./GameDetails.styled";
 
-const GameDetails = () => {
+export const GameDetails = () => {
   const { id } = useParams();
 
   const {
@@ -148,5 +148,3 @@ const GameDetails = () => {
     </Styled.Section>
   );
 };
-
-export default GameDetails;

@@ -1,7 +1,7 @@
 import Image from "@img/icon.svg";
 import * as Styled from "./PageNotFound.styled";
 
-const PageNotFound = () => {
+export const PageNotFound = () => {
   return (
     <Styled.Section>
       <Styled.Container>
@@ -12,5 +12,3 @@ const PageNotFound = () => {
     </Styled.Section>
   );
 };
-
-export default PageNotFound;

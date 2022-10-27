@@ -49,7 +49,7 @@ const navigation = [
   },
 ];
 
-const Navbar = () => {
+export const Navbar = () => {
   return (
     <Styled.Container>
       {navigation.map(section => (
@@ -67,5 +67,3 @@ const Navbar = () => {
     </Styled.Container>
   );
 };
-
-export default Navbar;

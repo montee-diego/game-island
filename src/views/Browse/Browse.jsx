@@ -11,7 +11,7 @@ import Line from "@components/Line";
 
 import * as Styled from "./Browse.styled";
 
-const Browse = () => {
+export const Browse = () => {
   const dispatch = useDispatch();
   const { type } = useParams();
   const { category } = useSelector(state => state.app);
@@ -71,5 +71,3 @@ const Browse = () => {
     </section>
   );
 };
-
-export default Browse;

@@ -8,7 +8,7 @@ import Line from "@components/Line";
 import Loading from "@components/Loading";
 import LoadButton from "@components/LoadButton";
 
-const Discover = () => {
+export const Discover = () => {
   const [page, setPage] = useState(1);
   const [results, setResults] = useState([]);
   const [isComplete, setIsComplete] = useState(false);
@@ -78,5 +78,3 @@ const Discover = () => {
     </section>
   );
 };
-
-export default Discover;

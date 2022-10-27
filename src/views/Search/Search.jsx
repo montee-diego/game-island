@@ -8,7 +8,7 @@ import ErrorMessage from "@components/ErrorMessage";
 import LoadButton from "@components/LoadButton";
 import GameList from "@components/GameList";
 
-const Search = () => {
+export const Search = () => {
   const [page, setPage] = useState(1);
   const [results, setResults] = useState([]);
   const [isComplete, setIsComplete] = useState(false);
@@ -60,5 +60,3 @@ const Search = () => {
     </section>
   );
 };
-
-export default Search;

@@ -4,7 +4,7 @@ import { useNavigate, createSearchParams } from "react-router-dom";
 import SearchIcon from "@img/icon-search.svg";
 import * as Styled from "./SearchBar.styled";
 
-const SearchBar = () => {
+export const SearchBar = () => {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
 
@@ -31,5 +31,3 @@ const SearchBar = () => {
     </Styled.Form>
   );
 };
-
-export default SearchBar;

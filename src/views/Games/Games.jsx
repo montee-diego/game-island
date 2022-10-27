@@ -9,7 +9,7 @@ import Line from "@components/Line";
 import Loading from "@components/Loading";
 import LoadButton from "@components/LoadButton";
 
-const Games = () => {
+export const Games = () => {
   const [page, setPage] = useState(1);
   const [results, setResults] = useState([]);
   const [isComplete, setIsComplete] = useState(false);
@@ -64,5 +64,3 @@ const Games = () => {
     </section>
   );
 };
-
-export default Games;

@@ -1,6 +1,6 @@
 import * as Styled from "./Footer.styled";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <Styled.Container>
       <Styled.Content>
@@ -13,5 +13,3 @@ const Footer = () => {
     </Styled.Container>
   );
 };
-
-export default Footer;

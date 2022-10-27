@@ -4,7 +4,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { Browse, Discover, GameDetails, Games, Home, PageNotFound, Search } from "@views";
 import * as Styled from "./Views.styled";
 
-const Views = () => {
+export const Views = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -26,5 +26,3 @@ const Views = () => {
     </Styled.Container>
   );
 };
-
-export default Views;

@@ -4,7 +4,7 @@ import { Logo, SearchBar, Navbar } from "@components";
 
 import * as Styled from "./Header.styled";
 
-const Header = () => {
+export const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
@@ -21,5 +21,3 @@ const Header = () => {
     </Styled.Container>
   );
 };
-
-export default Header;
