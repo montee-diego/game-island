@@ -18,7 +18,11 @@ const Games = () => {
   const { type, id } = useParams();
 
   const { data, isFetching, isError, refetch } = useGetCategoryGamesQuery(
-    { type: type, id: id, page: page },
+    {
+      filter: type,
+      id: id,
+      params: { page: page, page_size: 20 },
+    },
     { skip: isComplete }
   );
 

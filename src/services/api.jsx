@@ -1,4 +1,12 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { createSearchParams } from "react-router-dom";
+
+const searchParams = (params = {}) => {
+  return createSearchParams({
+    key: import.meta.env.VITE_API_KEY,
+    ...params,
+  });
+};
 
 export const fetchAPI = createApi({
   reducerPath: "fetchAPI",
@@ -6,47 +14,36 @@ export const fetchAPI = createApi({
   keepUnusedDataFor: 60,
   endpoints: builder => ({
     getLists: builder.query({
-      query: param =>
-        `/games/lists/${param.type}?key=${
-          import.meta.env.VITE_API_KEY
-        }&ordering=${param.order}&page=${param.page}&page_size=${param.size}`,
+      query: ({ list, params }) => `/games/lists/${list}?${searchParams(params)}`,
     }),
     getDetails: builder.query({
-      query: game_id => `/games/${game_id}?key=${import.meta.env.VITE_API_KEY}`,
+      query: game_id => `/games/${game_id}?${searchParams()}`,
     }),
     getStoreLinks: builder.query({
-      query: game_id =>
-        `/games/${game_id}/stores?key=${import.meta.env.VITE_API_KEY}`,
+      query: game_id => `/games/${game_id}/stores?${searchParams()}`,
     }),
     getScreenshots: builder.query({
-      query: game_id =>
-        `/games/${game_id}/screenshots?key=${import.meta.env.VITE_API_KEY}`,
+      query: game_id => `/games/${game_id}/screenshots?${searchParams()}`,
     }),
     getMoreRelated: builder.query({
-      query: game_id =>
-        `/games/${game_id}/game-series?key=${import.meta.env.VITE_API_KEY}`,
+      query: game_id => `/games/${game_id}/game-series?${searchParams()}`,
     }),
     getSearch: builder.query({
-      query: params =>
-        `/games?key=${import.meta.env.VITE_API_KEY}&search=${
-          params.query
-        }&page=${params.page}&page_size=20`,
+      query: params => `/games?${searchParams(params)}`,
     }),
     getCategory: builder.query({
-      query: params =>
-        `/${params.type}?key=${import.meta.env.VITE_API_KEY}&page=${
-          params.page
-        }&page_size=20`,
+      query: ({ category, params }) => `/${category}?${searchParams(params)}`,
     }),
     getCategoryGames: builder.query({
-      query: params =>
-        `/games?key=${import.meta.env.VITE_API_KEY}&${params.type}=${
-          params.id
-        }&page=${params.page}&page_size=20`,
+      query: ({ filter, id, params }) => {
+        const dynamicParams = { ...params };
+        dynamicParams[filter] = id;
+
+        return `/games?${searchParams(dynamicParams)}`;
+      },
     }),
     getCategoryDetails: builder.query({
-      query: params =>
-        `/${params.type}/${params.id}?key=${import.meta.env.VITE_API_KEY}`,
+      query: params => `/${params.type}/${params.id}?${searchParams()}`,
     }),
   }),
 });

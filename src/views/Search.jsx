@@ -18,7 +18,7 @@ const Search = () => {
   const searchQuery = searchParams.get("query");
 
   const { data, isFetching, isError, refetch } = useGetSearchQuery(
-    { query: searchQuery, page: page },
+    { search: searchQuery, page: page, page_size: 20 },
     { skip: isComplete }
   );
 

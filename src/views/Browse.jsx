@@ -7,6 +7,9 @@ import Loading from "../components/Loading";
 import ErrorMessage from "../components/ErrorMessage";
 import CategoryList from "../components/CategoryList";
 import LoadButton from "../components/LoadButton";
+import Line from "../components/Line";
+
+import * as Styled from "./Browse.styled";
 
 const Browse = () => {
   const dispatch = useDispatch();
@@ -20,7 +23,10 @@ const Browse = () => {
 
   const { isLast, next, page, results } = category[type];
   const { data, isFetching, isError, refetch } = useGetCategoryQuery(
-    { type: type, page: next },
+    {
+      category: type,
+      params: { page: next, page_size: 20 },
+    },
     { skip: isLast || page === next }
   );
 
@@ -51,6 +57,8 @@ const Browse = () => {
 
   return (
     <section>
+      <Styled.Title>Browse {type}</Styled.Title>
+      <Line />
       {results.length > 0 && <CategoryList categories={results} />}
 
       {isFetching ? (

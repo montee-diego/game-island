@@ -34,10 +34,8 @@ const Discover = () => {
 
   const { data, isFetching, isError, refetch } = useGetListsQuery(
     {
-      type: type,
-      order: "-relevance",
-      page: page,
-      size: 20,
+      list: type,
+      params: { ordering: "-relevance", page: page, page_size: 20 },
     },
     { skip: isComplete }
   );

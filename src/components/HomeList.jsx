@@ -14,7 +14,10 @@ const HomeList = ({ type, order, id }) => {
   const { home } = useSelector(state => state.app);
   const { name, results } = home[id];
   const { data, isFetching, isError, refetch } = useGetListsQuery(
-    { type: type, order: order, page: 1, size: 10 },
+    {
+      list: type,
+      params: { ordering: order, page: 1, page_size: 10 },
+    },
     { skip: results.length > 0 }
   );
 
