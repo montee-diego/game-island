@@ -6,8 +6,8 @@ import {
   useGetStoreLinksQuery,
   useGetScreenshotsQuery,
   useGetMoreRelatedQuery,
-} from "../services/api";
-import { resizeImage } from "../utils";
+} from "@services/api";
+import { resizeImage } from "@utils/Images";
 import ErrorMessage from "../components/ErrorMessage";
 import Loading from "../components/Loading";
 import GameList from "../components/GameList";
@@ -49,10 +49,7 @@ const GameDetails = () => {
       ) : (
         <>
           <ImageWrapper>
-            <img
-              src={resizeImage(gameData.background_image, 1280)}
-              alt={gameData.name}
-            />
+            <img src={resizeImage(gameData.background_image, 1280)} alt={gameData.name} />
             <GameTitle>
               <h1>{gameData.name}</h1>
             </GameTitle>

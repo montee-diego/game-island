@@ -2,8 +2,8 @@ import { default as styled } from "styled-components";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 
-import { resizeImage } from "../utils";
-import { cardHoverAnim } from "../animations";
+import { resizeImage } from "@utils/Images";
+import { cardHoverAnim } from "@utils/Animations";
 
 const CategoryCard = ({ category }) => {
   const location = useLocation();
@@ -12,10 +12,7 @@ const CategoryCard = ({ category }) => {
   return (
     <GameWrapper variants={cardHoverAnim} initial='hidden' whileHover='show'>
       <Link to={`/games/${parentCategory}/${category.id}`}>
-        <img
-          src={resizeImage(category.image_background, 640)}
-          alt={category.name}
-        />
+        <img src={resizeImage(category.image_background, 640)} alt={category.name} />
         <Details>
           <h3>{category.name}</h3>
         </Details>

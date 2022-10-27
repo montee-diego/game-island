@@ -1,6 +1,7 @@
 import { default as styled } from "styled-components";
 import { motion } from "framer-motion";
-import { lineAnim } from "../animations";
+
+import { lineAnim } from "@utils/Animations";
 
 const Line = () => {
   return <StyledLine variants={lineAnim} initial='hidden' animate='show' />;

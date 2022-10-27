@@ -15,6 +15,7 @@ export default defineConfig({
       "@img": resolve(__dirname, "src/img"),
       "@services": resolve(__dirname, "src/services"),
       "@styles": resolve(__dirname, "src/styles"),
+      "@utils": resolve(__dirname, "src/utils"),
       "@views": resolve(__dirname, "src/views"),
     },
   },

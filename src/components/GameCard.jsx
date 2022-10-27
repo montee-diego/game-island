@@ -2,8 +2,8 @@ import { default as styled } from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import { resizeImage } from "../utils";
-import { cardHoverAnim } from "../animations";
+import { resizeImage } from "@utils/Images";
+import { cardHoverAnim } from "@utils/Animations";
 
 const GameCard = ({ game }) => {
   return (
