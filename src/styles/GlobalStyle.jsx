@@ -6,23 +6,23 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     box-sizing: border-box;
     scrollbar-width: thin;
-    scrollbar-color: #3f4a5e #1a1e25;
+    scrollbar-color: ${props => props.theme.button.bg} ${props => props.theme.body.scroll_bg};
 
     &::-webkit-scrollbar {
       width: 8px;
     }
 
     &::-webkit-scrollbar-track {
-      background-color: #1a1e25;
+      background-color: ${props => props.theme.body.scroll_bg};
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: #3f4a5e;
+      background-color: ${props => props.theme.button.bg};
     }
   }
 
   body {
-    background-color: #232933;
+    background-color: ${props => props.theme.body.bg};
     color: ${props => props.theme.text.normal};
     font-family: 'Montserrat', sans-serif;
   }

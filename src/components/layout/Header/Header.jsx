@@ -8,7 +8,7 @@ export const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   return (
-    <Styled.Container>
+    <Styled.Container onMouseLeave={() => setIsNavOpen(false)}>
       <Styled.Content>
         <Logo />
 
@@ -17,7 +17,7 @@ export const Header = () => {
         <SearchBar />
       </Styled.Content>
 
-      {isNavOpen && <Navbar />}
+      {isNavOpen && <Navbar setIsNavOpen={setIsNavOpen} />}
     </Styled.Container>
   );
 };

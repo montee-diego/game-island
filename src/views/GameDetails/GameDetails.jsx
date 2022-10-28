@@ -1,4 +1,3 @@
-import { default as styled } from "styled-components";
 import { useParams } from "react-router-dom";
 
 import {

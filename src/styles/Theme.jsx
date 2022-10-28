@@ -11,4 +11,8 @@ export default {
     bg: "#3f4a5e",
     hover: "#505e79",
   },
+  body: {
+    bg: "#232933",
+    scroll_bg: "#1a1e25",
+  },
 };

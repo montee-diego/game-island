@@ -49,7 +49,11 @@ const navigation = [
   },
 ];
 
-export const Navbar = () => {
+export const Navbar = ({ setIsNavOpen }) => {
+  const handleClick = () => {
+    setIsNavOpen(false);
+  };
+
   return (
     <Styled.Container>
       {navigation.map(section => (
@@ -58,7 +62,9 @@ export const Navbar = () => {
           <Styled.List>
             {section.data.map(link => (
               <li key={link.name}>
-                <Styled.Link to={link.path}>{link.name}</Styled.Link>
+                <Styled.Link to={link.path} onClick={handleClick}>
+                  {link.name}
+                </Styled.Link>
               </li>
             ))}
           </Styled.List>
