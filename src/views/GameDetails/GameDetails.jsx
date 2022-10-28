@@ -8,9 +8,7 @@ import {
   useGetMoreRelatedQuery,
 } from "@services/api";
 import { resizeImage } from "@utils/Images";
-import { ErrorMessage, Loading } from "@components";
-
-import GameList from "@components/GameList";
+import { ErrorMessage, Grid, Loading } from "@components";
 
 import * as Styled from "./GameDetails.styled";
 
@@ -140,7 +138,7 @@ export const GameDetails = () => {
             ) : relatedIsError ? (
               <p>Game over! Failed to fetch data.</p>
             ) : (
-              <GameList games={relatedData.results} />
+              <Grid data={relatedData.results} href={"/browse/game"} />
             )}
           </Styled.RelatedGames>
         </>

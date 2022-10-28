@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Navigate } from "react-router";
 
 import { useGetListsQuery } from "@services/api";
-import { ErrorMessage, Line, Loading, LoadMore } from "@components";
-
-import GameList from "@components/GameList";
+import { ErrorMessage, Grid, Line, Loading, LoadMore } from "@components";
 
 export const Discover = () => {
   const [page, setPage] = useState(1);
@@ -64,7 +62,7 @@ export const Discover = () => {
       <h1>Discover: {title ? title : "Uknown Category"}</h1>
       <Line />
 
-      {results.length > 0 && <GameList games={results} />}
+      {results.length > 0 && <Grid data={results} href={"/browse/game"} />}
 
       {isFetching ? (
         <Loading />

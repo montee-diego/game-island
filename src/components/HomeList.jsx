@@ -4,9 +4,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useGetListsQuery } from "@services/api";
-import { ErrorMessage, Line, Loading } from "@components";
-
-import GameList from "./GameList";
+import { ErrorMessage, Grid, Line, Loading } from "@components";
 
 const HomeList = ({ type, order, id }) => {
   const dispatch = useDispatch();
@@ -37,7 +35,7 @@ const HomeList = ({ type, order, id }) => {
       <TitleLink to={`/games/discover/${type}`}>{name}</TitleLink>
       <Line />
 
-      {results.length > 0 && <GameList games={results} />}
+      {results.length > 0 && <Grid data={results} href={"/browse/game"} />}
       {isFetching ? <Loading /> : isError && <ErrorMessage action={refetch} />}
     </div>
   );

@@ -3,9 +3,7 @@ import { useParams, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useGetCategoryQuery } from "@services/api";
-import { ErrorMessage, Line, Loading, LoadMore } from "@components";
-
-import CategoryList from "@components/CategoryList";
+import { ErrorMessage, Grid, Line, Loading, LoadMore } from "@components";
 
 import * as Styled from "./Browse.styled";
 
@@ -57,7 +55,7 @@ export const Browse = () => {
     <section>
       <Styled.Title>Browse {type}</Styled.Title>
       <Line />
-      {results.length > 0 && <CategoryList categories={results} />}
+      {results.length > 0 && <Grid data={results} href={`/games/${type}`} />}
 
       {isFetching ? (
         <Loading />

@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { useGetCategoryGamesQuery } from "@services/api";
-import { ErrorMessage, Line, Loading, LoadMore } from "@components";
+import { ErrorMessage, Grid, Line, Loading, LoadMore } from "@components";
 
 import DynamicTitle from "@components/DynamicTitle";
-import GameList from "@components/GameList";
 
 export const Games = () => {
   const [page, setPage] = useState(1);
@@ -50,7 +49,7 @@ export const Games = () => {
       <DynamicTitle type={type} id={id} />
       <Line />
 
-      {results.length > 0 && <GameList games={results} />}
+      {results.length > 0 && <Grid data={results} href={"/browse/game"} />}
 
       {isFetching ? (
         <Loading />
