@@ -8,8 +8,8 @@ import {
   useGetMoreRelatedQuery,
 } from "@services/api";
 import { resizeImage } from "@utils/Images";
-import ErrorMessage from "@components/ErrorMessage";
-import Loading from "@components/Loading";
+import { ErrorMessage, Loading } from "@components";
+
 import GameList from "@components/GameList";
 
 import * as Styled from "./GameDetails.styled";

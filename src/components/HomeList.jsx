@@ -2,12 +2,11 @@ import { useEffect } from "react";
 import { default as styled } from "styled-components";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useGetListsQuery } from "../services/api";
 
-import ErrorMessage from "./ErrorMessage";
+import { useGetListsQuery } from "@services/api";
+import { ErrorMessage, Line, Loading } from "@components";
+
 import GameList from "./GameList";
-import Line from "./Line";
-import Loading from "./Loading";
 
 const HomeList = ({ type, order, id }) => {
   const dispatch = useDispatch();

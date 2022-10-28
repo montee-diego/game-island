@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams, Navigate } from "react-router";
 
 import { useGetListsQuery } from "@services/api";
-import ErrorMessage from "@components/ErrorMessage";
+import { ErrorMessage, Line, Loading } from "@components";
+
 import GameList from "@components/GameList";
-import Line from "@components/Line";
-import Loading from "@components/Loading";
 import LoadButton from "@components/LoadButton";
 
 export const Discover = () => {

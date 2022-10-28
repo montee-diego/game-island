@@ -1,3 +1,42 @@
+export const loaderAnim1 = {
+  from: {
+    scale: 0,
+  },
+  to: {
+    scale: 1,
+    transition: {
+      repeat: Infinity,
+      duration: 0.6,
+    },
+  },
+};
+
+export const loaderAnim2 = {
+  from: {
+    x: 0,
+  },
+  to: {
+    x: 24,
+    transition: {
+      repeat: Infinity,
+      duration: 0.6,
+    },
+  },
+};
+
+export const loaderAnim3 = {
+  from: {
+    scale: 1,
+  },
+  to: {
+    scale: 0,
+    transition: {
+      repeat: Infinity,
+      duration: 0.6,
+    },
+  },
+};
+
 export const lineAnim = {
   hidden: {
     width: "0%",

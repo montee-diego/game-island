@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import { useGetSearchQuery } from "@services/api";
-import Line from "@components/Line";
-import Loading from "@components/Loading";
-import ErrorMessage from "@components/ErrorMessage";
+import { ErrorMessage, Line, Loading } from "@components";
+
 import LoadButton from "@components/LoadButton";
 import GameList from "@components/GameList";
 

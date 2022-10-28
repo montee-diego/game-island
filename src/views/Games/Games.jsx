@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { useGetCategoryGamesQuery } from "@services/api";
+import { ErrorMessage, Line, Loading } from "@components";
+
 import DynamicTitle from "@components/DynamicTitle";
-import ErrorMessage from "@components/ErrorMessage";
 import GameList from "@components/GameList";
-import Line from "@components/Line";
-import Loading from "@components/Loading";
 import LoadButton from "@components/LoadButton";
 
 export const Games = () => {
