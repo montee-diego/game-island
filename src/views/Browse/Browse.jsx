@@ -3,10 +3,9 @@ import { useParams, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useGetCategoryQuery } from "@services/api";
-import { ErrorMessage, Line, Loading } from "@components";
+import { ErrorMessage, Line, Loading, LoadMore } from "@components";
 
 import CategoryList from "@components/CategoryList";
-import LoadButton from "@components/LoadButton";
 
 import * as Styled from "./Browse.styled";
 
@@ -65,7 +64,7 @@ export const Browse = () => {
       ) : isError ? (
         <ErrorMessage action={refetch} />
       ) : (
-        !isLast && <LoadButton action={nextPage} />
+        !isLast && <LoadMore action={nextPage} />
       )}
     </section>
   );

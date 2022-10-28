@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 import { useParams, Navigate } from "react-router";
 
 import { useGetListsQuery } from "@services/api";
-import { ErrorMessage, Line, Loading } from "@components";
+import { ErrorMessage, Line, Loading, LoadMore } from "@components";
 
 import GameList from "@components/GameList";
-import LoadButton from "@components/LoadButton";
 
 export const Discover = () => {
   const [page, setPage] = useState(1);
@@ -72,7 +71,7 @@ export const Discover = () => {
       ) : isError ? (
         <ErrorMessage action={refetch} />
       ) : (
-        data?.next !== null && <LoadButton action={nextPage} />
+        data?.next !== null && <LoadMore action={nextPage} />
       )}
     </section>
   );

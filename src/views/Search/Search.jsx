@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import { useGetSearchQuery } from "@services/api";
-import { ErrorMessage, Line, Loading } from "@components";
+import { ErrorMessage, Line, Loading, LoadMore } from "@components";
 
-import LoadButton from "@components/LoadButton";
 import GameList from "@components/GameList";
 
 export const Search = () => {
@@ -54,7 +53,7 @@ export const Search = () => {
       ) : isError ? (
         <ErrorMessage action={refetch} />
       ) : (
-        data?.next !== null && <LoadButton action={nextPage} />
+        data?.next !== null && <LoadMore action={nextPage} />
       )}
     </section>
   );

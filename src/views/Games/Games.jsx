@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { useGetCategoryGamesQuery } from "@services/api";
-import { ErrorMessage, Line, Loading } from "@components";
+import { ErrorMessage, Line, Loading, LoadMore } from "@components";
 
 import DynamicTitle from "@components/DynamicTitle";
 import GameList from "@components/GameList";
-import LoadButton from "@components/LoadButton";
 
 export const Games = () => {
   const [page, setPage] = useState(1);
@@ -58,7 +57,7 @@ export const Games = () => {
       ) : isError ? (
         <ErrorMessage action={refetch} />
       ) : (
-        data?.next !== null && <LoadButton action={nextPage} />
+        data?.next !== null && <LoadMore action={nextPage} />
       )}
     </section>
   );

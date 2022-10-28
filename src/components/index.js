@@ -6,5 +6,6 @@ export { Views } from "@components/layout/Views/Views";
 export { ErrorMessage } from "@components/shared/ErrorMessage/ErrorMessage";
 export { Line } from "@components/shared/Line/Line";
 export { Loading } from "@components/shared/Loading/Loading";
+export { LoadMore } from "@components/shared/LoadMore/LoadMore";
 export { Logo } from "@components/shared/Logo/Logo";
 export { SearchBar } from "@components/shared/SearchBar/SearchBar";
