@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import { default as styled } from "styled-components";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useGetListsQuery } from "@services/api";
 import { ErrorMessage, Grid, Line, Loading } from "@components";
 
-const HomeList = ({ type, order, id }) => {
+import * as Styled from "./HomeList.styled";
+
+export const HomeList = ({ type, order, id }) => {
   const dispatch = useDispatch();
   const { home } = useSelector(state => state.app);
   const { name, results } = home[id];
@@ -32,7 +32,7 @@ const HomeList = ({ type, order, id }) => {
 
   return (
     <div>
-      <TitleLink to={`/games/discover/${type}`}>{name}</TitleLink>
+      <Styled.Title to={`/games/discover/${type}`}>{name}</Styled.Title>
       <Line />
 
       {results.length > 0 && <Grid data={results} href={"/browse/game"} />}
@@ -40,12 +40,3 @@ const HomeList = ({ type, order, id }) => {
     </div>
   );
 };
-
-const TitleLink = styled(Link)`
-  display: inline-block;
-  font-size: 1.8rem;
-  font-weight: 700;
-  padding: 1rem 0rem;
-`;
-
-export default HomeList;

@@ -58,7 +58,7 @@ export const cardHoverAnim = {
     boxShadow: "0px 2px 15px rgba(0, 0, 0, 0.5)",
     scale: 1.05,
     transition: {
-      duration: 0.25,
+      duration: 0.35,
     },
   },
 };

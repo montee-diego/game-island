@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: #232933;
-    color: #c1c6cf;
+    color: ${props => props.theme.text.normal};
     font-family: 'Montserrat', sans-serif;
   }
 
@@ -32,12 +32,6 @@ export const GlobalStyle = createGlobalStyle`
     position: sticky;
     top: 0;
     z-index: 20;
-  }
-
-  section {
-    /* width: 90%;
-    margin: 0rem auto;
-    flex-grow: 1; */
   }
 
   h1 {
@@ -55,16 +49,16 @@ export const GlobalStyle = createGlobalStyle`
 
   h4 {
     font-size: 0.8rem;
-    color: #959caa;
+    color: ${props => props.theme.text.secondary};
   }
 
   a {
     text-decoration: none;
-    color: #c1c6cf;
+    color: ${props => props.theme.text.normal};
     transition: color 0.25s ease;
 
     &:hover {
-      color: white;
+      color: ${props => props.theme.text.active};
     }
   }
 
@@ -79,14 +73,6 @@ export const GlobalStyle = createGlobalStyle`
   input {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
-    /* font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    background-color: #3f4a5e;
-    color: #c1c6cf;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 0.5rem 0rem 0rem 0.5rem;
-    outline: none;
-    padding: 0.6rem; */
   }
 
   button {

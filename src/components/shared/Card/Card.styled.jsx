@@ -31,6 +31,5 @@ export const Details = styled.div`
   left: 0;
   width: 101%;
   background-color: rgba(0, 0, 0, 0.7);
-  color: #d9dfeb;
   padding: 0.5rem;
 `;

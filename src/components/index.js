@@ -3,6 +3,8 @@ export { Header } from "@components/layout/Header/Header";
 export { Navbar } from "@components/layout/Navbar/Navbar";
 export { Views } from "@components/layout/Views/Views";
 
+export { HomeList } from "@components/home/HomeList";
+
 export { Card } from "@components/shared/Card/Card";
 export { ErrorMessage } from "@components/shared/ErrorMessage/ErrorMessage";
 export { Grid } from "@components/shared/Grid/Grid";

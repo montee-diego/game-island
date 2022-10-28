@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { useGetCategoryGamesQuery } from "@services/api";
+import { useGetCategoryDetailsQuery, useGetCategoryGamesQuery } from "@services/api";
 import { ErrorMessage, Grid, Line, Loading, LoadMore } from "@components";
 
-import DynamicTitle from "@components/DynamicTitle";
+const DynamicTitle = ({ type, id }) => {
+  const { data, isFetching, isError } = useGetCategoryDetailsQuery({
+    type: type,
+    id: id,
+  });
+
+  return <h1>{isFetching || isError ? "..." : `${data?.name} Games`}</h1>;
+};
 
 export const Games = () => {
   const [page, setPage] = useState(1);
