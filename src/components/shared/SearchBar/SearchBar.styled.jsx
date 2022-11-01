@@ -10,6 +10,11 @@ export const Form = styled.form`
   &:focus-within {
     border: 1px solid rgba(164, 198, 255, 0.25);
   }
+
+  @media screen and (max-width: 768px) {
+    flex: 0;
+    width: 100%;
+  }
 `;
 
 export const Input = styled.input`
@@ -19,6 +24,10 @@ export const Input = styled.input`
   flex: 1;
   outline: none;
   padding: 0.5rem 0.7rem;
+
+  @media screen and (max-width: 768px) {
+    padding: 0.7rem 0.7rem;
+  }
 `;
 
 export const SubmitBtn = styled.button`

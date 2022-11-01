@@ -6,13 +6,14 @@ import * as Styled from "./Views.styled";
 
 export const Views = () => {
   const { pathname } = useLocation();
+  const isDetails = pathname.includes("/browse/game");
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
   return (
-    <Styled.Container>
+    <Styled.Container isDetails={isDetails}>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/error' element={<PageNotFound />} />
