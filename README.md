@@ -20,6 +20,7 @@ easy to understand and update when necessary.
 - RTK Query for all API requests
 - Styled Components for CSS (uses ThemeContext for easy theming, this would allow easy dark and
   light theme implementation in the future)
+- Framer motion for animations
 
 ## Compatibility
 
