@@ -1,7 +1,11 @@
+import { useTitle } from "@utils/useTitle";
+
 import Image from "@img/icon.svg";
 import * as Styled from "./PageNotFound.styled";
 
 export const PageNotFound = () => {
+  useTitle("Page not found");
+
   return (
     <Styled.Section>
       <Styled.Container>

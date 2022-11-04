@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Navigate } from "react-router";
 
 import { useGetListsQuery } from "@services/api";
+import { useTitle } from "@utils/useTitle";
 import { ErrorMessage, Grid, Line, Loading, LoadMore } from "@components";
 
 export const Discover = () => {
@@ -56,6 +57,8 @@ export const Discover = () => {
       setResults(results.concat(data?.results));
     }
   }, [type, data]);
+
+  useTitle("Discover");
 
   return (
     <section>

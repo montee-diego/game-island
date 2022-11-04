@@ -3,6 +3,7 @@ import { useParams, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useGetCategoryQuery } from "@services/api";
+import { useTitle } from "@utils/useTitle";
 import { ErrorMessage, Grid, Line, Loading, LoadMore } from "@components";
 
 import * as Styled from "./Browse.styled";
@@ -50,6 +51,8 @@ export const Browse = () => {
       });
     }
   }, [data]);
+
+  useTitle("Browse");
 
   return (
     <section>

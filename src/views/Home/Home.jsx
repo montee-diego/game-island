@@ -1,6 +1,9 @@
+import { useTitle } from "@utils/useTitle";
 import { HomeList } from "@components";
 
 export const Home = () => {
+  useTitle("Home");
+
   return (
     <section>
       <HomeList type='main' order='-relevance' id='latest' />

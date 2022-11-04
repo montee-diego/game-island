@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import { useGetSearchQuery } from "@services/api";
+import { useTitle } from "@utils/useTitle";
 import { ErrorMessage, Grid, Line, Loading, LoadMore } from "@components";
 
 export const Search = () => {
@@ -38,6 +39,8 @@ export const Search = () => {
       setResults(results.concat(data?.results));
     }
   }, [searchParams, data]);
+
+  useTitle("Search");
 
   return (
     <section>

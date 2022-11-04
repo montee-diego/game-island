@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { useGetCategoryDetailsQuery, useGetCategoryGamesQuery } from "@services/api";
+import { useTitle } from "@utils/useTitle";
 import { ErrorMessage, Grid, Line, Loading, LoadMore } from "@components";
 
 const DynamicTitle = ({ type, id }) => {
@@ -50,6 +51,8 @@ export const Games = () => {
       setResults(results.concat(data?.results));
     }
   }, [id, data]);
+
+  useTitle("Games");
 
   return (
     <section>

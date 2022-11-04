@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import {
@@ -7,6 +8,7 @@ import {
   useGetMoreRelatedQuery,
 } from "@services/api";
 import { resizeImage } from "@utils/Images";
+import { useTitle } from "@utils/useTitle";
 import { ErrorMessage, Grid, Loading } from "@components";
 
 import * as Styled from "./GameDetails.styled";
@@ -38,6 +40,8 @@ export const GameDetails = () => {
     isLoading: relatedIsLoading,
     isError: relatedIsError,
   } = useGetMoreRelatedQuery(id);
+
+  useTitle("Details");
 
   return (
     <Styled.Section>
